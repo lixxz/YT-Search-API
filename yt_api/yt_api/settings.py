@@ -18,7 +18,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "KEY")
 
-# Don't set DEBUG in prod
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
 # Example: DJANGO_ALLOWED_HOSTS='localhost 127.0.0.1'
@@ -123,10 +122,10 @@ CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL")
 
 # API specific settings
 API_URL = 'https://www.googleapis.com/youtube/v3/search'
-# Single Key: YT_DEV_KEYS='key1' or Multiple Keys: YT_DEV_KEYS='key1 key2 key3'
-DEVELOPER_KEYS = os.environ.get("YT_DEV_KEYS", "").split(" ")
+# Single Key: API_YT_DEV_KEYS='key1' or Multiple Keys: API_YT_DEV_KEYS='key1 key2 key3'
+DEVELOPER_KEYS = os.environ.get("API_YT_DEV_KEYS", "").split(" ")
 SEARCH_QUERIES = ['official', 'new', 'cricket']
 # Keep this more than 1000 to fetch more resultsPerPage from YouTube API
-FETCH_INTERVAL = 100
+FETCH_INTERVAL = os.environ.get("API_FETCH_INTERVAL", 1000)
 # For django API
 RESULTS_PER_PAGE = 10
