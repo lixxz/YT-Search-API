@@ -14,7 +14,7 @@ Provides search functionality over latest YouTube videos.
         ```
         API_YT_DEV_KEYS=<key1> <key2>
         ```
-    - *API_FETCH_INTERVAL* controls how frequently YouTube API is called. Set it to around 100 for testing purpose.
+    - *API_FETCH_INTERVAL(seconds)* controls how frequently YouTube API is called. Set it to around 300 for testing purpose.
 
 3. Build the images and run the containers:
     ```
