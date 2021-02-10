@@ -126,6 +126,6 @@ API_URL = 'https://www.googleapis.com/youtube/v3/search'
 DEVELOPER_KEYS = os.environ.get("API_YT_DEV_KEYS", "").split(" ")
 SEARCH_QUERIES = ['official', 'new', 'cricket']
 # Keep this more than 1000 to fetch more resultsPerPage from YouTube API
-FETCH_INTERVAL = os.environ.get("API_FETCH_INTERVAL", 1000)
+FETCH_INTERVAL = int(os.environ.get("API_FETCH_INTERVAL", 1000))
 # For django API
 RESULTS_PER_PAGE = 10
